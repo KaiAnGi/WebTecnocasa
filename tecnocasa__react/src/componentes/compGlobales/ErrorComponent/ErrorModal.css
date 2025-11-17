@@ -1,0 +1,37 @@
+/*./ErrorModal.css*/
+/* ErrorModal.css */
+.error-modal-backdrop {  /* Cambiado de modal-backdrop */
+  position: fixed;
+  inset: 0;
+  background: rgba(36,37,42,0.19);
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-modal-content {  /* Renombrado también */
+  background: #fff;
+  border-radius: 29px;
+  text-align: center;
+  box-shadow: 0 3px 25px rgba(60,90,100,0.11);
+  padding: 38px 30px 26px 30px;
+  width: 380px;
+  max-width: 97vw;
+  position: relative;
+  z-index: 1061;
+}
+
+.error-modal-error {
+  background: #fff; border-radius: 29px; text-align: center; box-shadow: 0 3px 25px rgba(60,90,100,0.11);
+  padding: 38px 30px 26px 30px; width: 380px; max-width: 97vw;
+  position: relative;
+}
+.error-modal-atencion { font-size: 1.62rem; color: #434852; margin-bottom: 10px; margin-top: 7px; font-family: inherit; }
+.error-modal-text {
+  color: #384458; font-size: 1.04rem; margin-bottom: 22px; line-height: 1.39;
+}
+.error-modal-btn-cerrar {
+  border: none; background: #25876d; color: #fff; border-radius: 17px;
+  padding: 7px 28px; font-size: 1rem; font-weight: 500; cursor:pointer;
+}

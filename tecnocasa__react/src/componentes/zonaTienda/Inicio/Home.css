@@ -1,0 +1,255 @@
+/* Cabecera sticky con posicion fija para evitar salto */
+.header-transparent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px 4% 14px 0;
+  background: transparent;
+  border-bottom: none;
+  z-index: 9999;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header-transparent .nav-tecnocasa a {
+  margin: 0 18px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.07rem;
+  transition: color 0.18s;
+}
+
+.header-solid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px 4% 14px 0;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(70,70,70,0.08);
+  z-index: 9999;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header-solid .nav-tecnocasa a {
+  margin: 0 18px;
+  color: #337863;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.07rem;
+  transition: color 0.18s;
+}
+
+.logo-tecnocasa {
+  height: 38px;
+  margin-right: 16px;
+  margin-left: 15px;
+}
+
+.nav-tecnocasa {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Correcto alineamiento de links sin movimientos inesperados */
+.nav-tecnocasa a {
+  white-space: nowrap;
+}
+
+/* Espacio arriba para que el contenido no quede oculto bajo la cabecera fija */
+.banner-principal-tecnocasa {
+  position: relative;
+  height: 650px;
+  background: url('/images/teecnocasaBanner.jpg') center/cover no-repeat;
+  width: 100%;
+  padding-top: 70px; 
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(33,54,43,0.25);
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 100px;
+  color: #fff;
+}
+
+.banner-content h1 {
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
+.banner-content h2 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.banner-opciones {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  font-size: 1.13rem;
+  color: #fff;
+}
+
+.banner-opciones span {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.banner-busqueda {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-busqueda input {
+  width: 420px;
+  height: 44px;
+  border-radius: 24px;
+  border: none;
+  padding: 0 28px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.banner-busqueda button {
+  position: relative;
+  left: -38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.lupa-icon {
+  font-size: 1.35rem;
+  color: #337863;
+}
+
+.banner-pisos-contador {
+  margin-top: 22px;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+/* Main y cards con margen superior para separarse del banner */
+.seleccion-pisos-tecnocasa {
+  background: #f5f7fa;
+  padding: 56px 6% 46px 6%;
+  min-height: 390px;
+  margin-top: 0; /* Queda separado porque banner tiene padding-top */
+}
+
+.seleccion-pisos-tecnocasa h2 {
+  color: #364a57;
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin-bottom: 38px;
+  text-align: left;
+  margin-left: 0;
+  letter-spacing: .1px;
+}
+
+.cards-pisos-tecnocasa {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.card-piso-tecnocasa {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(60,80,85,0.07);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-piso-tecnocasa img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+}
+
+.card-piso-contenido {
+  padding: 18px 24px 25px 20px;
+}
+
+.card-piso-contenido h3 {
+  font-size: 1.11rem;
+  font-weight: 700;
+  color: #324651;
+  margin: 0;
+}
+
+.card-piso-contenido p {
+  color: #40576a;
+  margin: 8px 0 4px 0;
+}
+
+.card-piso-precio {
+  color: #337863;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.card-piso-desc {
+  font-size: 0.92rem;
+  color: #687384;
+  margin: 8px 0 0 0;
+}
+
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+}
+
+@media (max-width: 970px) {
+  .cards-pisos-tecnocasa {
+    flex-direction: column;
+    gap: 23px;
+  }
+  .card-piso-tecnocasa {
+    width: 94vw;
+    max-width: 370px;
+    margin: 0 auto;
+  }
+  .banner-principal-tecnocasa {
+    height: 300px;
+  }
+  .banner-content {
+    top: 30px;
+  }
+  .banner-busqueda input {
+    width: 80vw;
+    min-width: 190px;
+  }
+  .custom-backdrop {
+  backdrop-filter: blur(5px);
+  background: rgba(56,59,65,0.38) !important;
+}
+
+}

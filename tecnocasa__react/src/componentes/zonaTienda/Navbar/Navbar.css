@@ -1,0 +1,18 @@
+.nav-link-button { 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.07rem;
+  cursor: pointer;
+}
+
+.header-solid .nav-link-button{
+  color: #337863;
+  text-decoration: none;
+  font-size: 1.07rem;
+  transition: color 0.18s;
+}
+
+.header-solid .img {
+  background-image: url("/tecnocasa__react/public/images/tecnocasalogo2.svg");
+}

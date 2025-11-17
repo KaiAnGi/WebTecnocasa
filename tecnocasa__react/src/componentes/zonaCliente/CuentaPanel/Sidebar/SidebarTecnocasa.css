@@ -1,0 +1,76 @@
+.mc-sidebar {
+  background: #fff;
+  width: 220px;
+  padding: 24px 14px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+}
+
+.mc-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.mc-logo img {
+  width: 46px; height: 46px;
+}
+
+.mc-side-btn {
+  width: 100%;
+  padding: 12px 12px;
+  background: transparent;
+  border: none;
+  color: #51606b;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  border-radius: 10px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mc-side-btn:hover {
+  background: #f1f5f4;
+  color: #2f3c45;
+}
+
+.mc-side-btn.active {
+  background: #1c7b63;
+  color: #fff;
+}
+
+.mc-ico {
+  width: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.mc-logout {
+  margin-top: auto;
+  background: #f6f6f6;
+  color: #333;
+  border: 1px solid #e7ecea;
+}
+
+@media (max-width: 1100px) {
+  .mc-sidebar {
+    position: static;
+    width: 100%;
+    border-right: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .mc-side-btn {
+    flex: 1 1 45%;
+  }
+}

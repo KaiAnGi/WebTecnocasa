@@ -1,0 +1,212 @@
+/* ========== Reset y base (opcional pero recomendable) ========== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: #f7f8fb; color: #2f3c45; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* ========== Shell: Sidebar + Contenido ========== */
+.md-shell {
+  margin-top: 70px;                   /* altura del Navbar fijo */
+  display: grid;
+  grid-template-columns: 240px 1fr;   /* Sidebar + contenido */
+  gap: 24px;
+  padding: 16px 24px;
+  min-height: calc(100vh - 70px);
+
+  background: #f7f8fb;
+}
+
+/* Columna izquierda (alberga el componente SidebarTecnocasa) */
+.md-aside {
+  align-self: start;                  /* necesario para sticky interno */
+}
+
+/* Si SidebarTecnocasa ya trae su tarjeta .mc-sidebar, no necesitas más.
+   Si no, puedes estilizar el primer hijo con sticky y tarjeta: */
+.md-aside > * {
+  position: sticky;
+  top: 82px;                          /* 70px navbar + margen */
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 10px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Columna derecha: contenido */
+.md-content {
+  min-width: 0;                       /* evita que el contenido empuje al sidebar */
+}
+
+/* ========== Header de la página ========== */
+.md-header { margin-bottom: 16px; }
+.md-header h2 { margin: 0 0 6px; font-size: 26px; color: #2f3c45; }
+.md-sub { color: #6a7883; margin: 4px 0; }
+.md-tip { color: #51606b; margin: 8px 0 0; }
+
+/* ========== Perfil: formulario + panel derecho ========== */
+.perfil-wrapper { margin-top: 12px; }
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;   /* formulario + panel */
+  gap: 28px;
+}
+
+/* Tarjeta del formulario */
+.perfil-form-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.06);
+  padding: 24px;
+}
+
+/* Grids internos del form */
+.perfil-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* Campos */
+.form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #36434c;
+}
+.form-field input,
+.form-field select {
+  width: 100%;
+  height: 56px;
+  padding: 12px 14px;
+  border: 1px solid #e1e8e6;
+  border-radius: 12px;
+  background: #f8fbfa;
+  color: #2f3c45;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #2b7e67;
+  box-shadow: 0 0 0 3px rgba(43,126,103,.15);
+}
+
+/* Radios Sexo */
+.sexo-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  margin: 8px 0 18px;
+}
+.sexo-group { display: flex; gap: 22px; }
+.sexo-group input[type="radio"] {
+  appearance: none;
+  width: 16px; height: 16px;
+  border: 2px solid #9db0bc; border-radius: 50%;
+  position: relative; margin-right: 8px;
+}
+.sexo-group input[type="radio"]:checked { border-color: #254a78; }
+.sexo-group input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px; background: #254a78;
+  border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.sexo-group label { color: #37464f; }
+
+/* Subtítulos de secciones */
+.section-title { font-size: 20px; color: #2f3c45; margin: 16px 0 12px; }
+
+/* Email deshabilitado */
+input[disabled] {
+  background: #f1f5f4 !important;
+  color: #7b8b95 !important;
+}
+
+.md-section { margin-top: 24px; }
+.md-link-danger { color: #b00020; text-decoration: underline; border: red 2px solid; padding: 4px 10px; border-radius: 6px; }
+
+/* ========== Panel derecho del perfil ========== */
+.profile-panel {
+  position: sticky;
+  top: 82px;                          /* igual que el sidebar */
+  align-self: start;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #e6f3ee 0%, #cfe8de 65%, #b6dccf 100%);
+  padding: 22px 18px 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+/* Avatar */
+.pp-avatar { width: 210px; height: 210px; margin: -80px auto 10px; position: relative; }
+.pp-top {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 86px; height: 106px; border-radius: 44px 44px 38px 38px;
+  background: linear-gradient(180deg, #e8efe9, #93b7a9); top: -6px;
+}
+.pp-body {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 210px; height: 172px; border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #2b7e67, #135e49 70%);
+}
+
+/* Menú del panel */
+.pp-menu { list-style: none; margin: 10px 0 0; padding: 0; }
+.pp-menu li {
+  padding: 12px 12px;
+  border-radius: 10px;
+  color: #1b3b3c;
+  display: flex; align-items: center; gap: 10px;
+  cursor: default;
+}
+.pp-menu li.active { background: #d6ebe5; font-weight: 700; }
+
+/* ========== Tarjeta de cambiar contraseña ========== */
+.md-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.06);
+  padding: 22px;
+  margin-top: 24px;
+}
+.md-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.md-form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #36434c; }
+.md-form-group input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #e1e8e6;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #f8fbfa;
+}
+.md-invalid { color: #b00020; font-size: 13px; margin-top: 6px; }
+.md-actions { margin-top: 16px; display: flex; justify-content: flex-end; }
+.md-btn-primary {
+  background: #2b7e67; color: #fff; border: none;
+  border-radius: 12px; padding: 10px 16px; font-weight: 700; cursor: pointer;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1100px) {
+  .md-shell { grid-template-columns: 1fr; }
+  .md-aside > *, .profile-panel {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .perfil-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .perfil-grid2, .md-grid2 { grid-template-columns: 1fr; }
+}
